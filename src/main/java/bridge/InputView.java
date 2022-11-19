@@ -11,7 +11,7 @@ public class InputView {
      */
     public String readBridgeSize() {
         System.out.println("다리 길이를 입력해주세요.");
-        String bridgeLengthInput = Console.readLine();
+        String bridgeLengthInput = Console.readLine().trim();
         return bridgeLengthInput;
     }
 
@@ -37,13 +37,37 @@ public class InputView {
      * 사용자가 이동할 칸을 입력받는다.
      */
     public String readMoving() {
-        return null;
+        System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
+        String moveCommand = Console.readLine().trim();
+        return moveCommand;
+    }
+
+    /**
+     * Validates user input of move commands
+     * @param moveCommand String format of user command input to move
+     */
+    public void validateMoveCommand(String moveCommand) {
+        if (!(moveCommand.equals("U") || moveCommand.equals("D"))) {
+            throw new IllegalArgumentException("[ERROR] 이동을 위한 명령어는 'U' 나 'D' 입니다.");
+        }
     }
 
     /**
      * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
      */
     public String readGameCommand() {
-        return null;
+        System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
+        String gameCommand = Console.readLine().trim();
+        return gameCommand;
+    }
+
+    /**
+     * Validates user input of game commands
+     * @param gameCommand String format of user command input to retry or quit
+     */
+    public void validateGameCommand(String gameCommand) {
+        if (!(gameCommand.equals("R") || gameCommand.equals("Q"))) {
+            throw new IllegalArgumentException("[ERROR] 재시도하려면 'R' 을 게임을 종료하려면 'Q' 를 정확하게 입력해주세요.");
+        }
     }
 }
