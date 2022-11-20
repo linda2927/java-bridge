@@ -3,6 +3,9 @@ package bridge;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 사용자가 입력한 정답과 그 결과를 저장하고 관리한다.
+ */
 public class Result {
     private List<String> upperResult;
     private List<String> lowerResult;
