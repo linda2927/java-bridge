@@ -21,23 +21,13 @@ public class BridgeGame {
     }
 
     /**
-     * Compare user move command input and bridge answer
-     * @param answer nth element of bridge answer
-     * @param userMoveCommand user input of move command
-     */
-    public String calculateResult(String answer, String userMoveCommand) {
-        if (answer.equals(userMoveCommand)) { return "O"; }
-        return "X";
-    }
-
-    /**
      * Adds user's guess to result list
      * @param answer actual bridge answer element
      * @param userMoveCommand user's guess (move command)
-     * @return "O" or "X" according to the {@link BridgeGame#calculateResult(String, String)}
+     * @return "O" or "X" according to the {@link Result#calculateResult(String, String)}
      */
     public String move(String answer, String userMoveCommand) {
-        String result = calculateResult(answer, userMoveCommand);
+        String result = this.result.calculateResult(answer, userMoveCommand);
         this.result.addResult(userMoveCommand, result);
         return result;
     }

@@ -32,6 +32,16 @@ public class Result {
     }
 
     /**
+     * Compare user move command input and bridge answer
+     * @param answer nth element of bridge answer
+     * @param userMoveCommand user input of move command
+     */
+    public String calculateResult(String answer, String userMoveCommand) {
+        if (answer.equals(userMoveCommand)) { return "O"; }
+        return "X";
+    }
+
+    /**
      * Add result string "O" or "X" to upper and lower result list
      * @param moveCommand user's move command
      * @param result whether user's guess was correct (in "O" or "X")
