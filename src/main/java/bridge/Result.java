@@ -33,11 +33,11 @@ public class Result {
 
     /**
      * Compare user move command input and bridge answer
-     * @param answer nth element of bridge answer
+     * @param actualAnswer nth element of bridge answer
      * @param userMoveCommand user input of move command
      */
-    public String calculateResult(String answer, String userMoveCommand) {
-        if (answer.equals(userMoveCommand)) { return "O"; }
+    public String calculateResult(String actualAnswer, String userMoveCommand) {
+        if (actualAnswer.equals(userMoveCommand)) { return "O"; }
         return "X";
     }
 

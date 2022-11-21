@@ -22,12 +22,12 @@ public class BridgeGame {
 
     /**
      * Adds user's guess to result list
-     * @param answer actual bridge answer element
+     * @param actualAnswer actual bridge actualAnswer element
      * @param userMoveCommand user's guess (move command)
      * @return "O" or "X" according to the {@link Result#calculateResult(String, String)}
      */
-    public String move(String answer, String userMoveCommand) {
-        String result = this.result.calculateResult(answer, userMoveCommand);
+    public String move(String actualAnswer, String userMoveCommand) {
+        String result = this.result.calculateResult(actualAnswer, userMoveCommand);
         this.result.addResult(userMoveCommand, result);
         return result;
     }
