@@ -37,7 +37,7 @@ public class OutputView {
      * @param result instance of Result class which contains the result of guessing
      */
     public void printResult(Result result) {
-        System.out.println("최종 게임 결과");
+        System.out.println("\n최종 게임 결과");
         printMap(result);
     }
 }
