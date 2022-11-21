@@ -50,7 +50,7 @@ public class Result {
     /**
      * Clears the result list in case of game retry
      */
-    public void clearAnswer() {
+    public void clearResult() {
         this.upperResult = new ArrayList<>();
         this.lowerResult = new ArrayList<>();
     }

@@ -47,7 +47,7 @@ public class BridgeGame {
      */
     public void retry() {
         attempts++;
-        this.result.clearAnswer();
+        this.result.clearResult();
         play();
     }
 
