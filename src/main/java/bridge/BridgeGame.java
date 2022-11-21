@@ -59,5 +59,42 @@ public class BridgeGame {
         manager.finalResult(this.result, isSuccess, attempts);
     }
 
-    public void play() {}
+    /**
+     * Generates bridge answer and starts the game
+     */
+    public void start() {
+        System.out.println("다리 건너기 게임을 시작합니다.\n");
+        this.bridgeAnswer = manager.generateBridgeAnswer();
+        play();
+    }
+
+    /**
+     * In case of wrong guess, retries or quits the game according to user's game command
+     */
+    private void wrongGuess() {
+        if (manager.getValidatedGameCommand().equals("R")) {
+            retry();
+            return;
+        }
+        quit(false);
+    }
+
+    /**
+     * Plays the game
+     * <p>
+     * Repeats getting move command input and printing results
+     */
+    public void play() {
+        for (String answer : bridgeAnswer) {
+            String moveCommand = manager.getValidatedMoveCommand();
+            String result = move(answer, moveCommand);
+            manager.guessResult(this.result);
+
+            if (result.equals("X")) {
+                wrongGuess();
+                return;
+            }
+        }
+        quit(true);
+    }
 }
